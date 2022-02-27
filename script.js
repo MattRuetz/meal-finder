@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const search = document.getElementById('search');
 const submit = document.getElementById('submit');
 const random = document.getElementById('random');
@@ -106,6 +107,8 @@ const addMealToDOM = (meal) => {
         </div>
     </div>
     `;
+
+    singleMealEl.scrollIntoView();
 };
 
 // Event Listeners
