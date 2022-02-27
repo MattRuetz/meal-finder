@@ -60,6 +60,21 @@ const getMealByID = (mealID) => {
         });
 };
 
+// Fetch one random meal from API
+const getRandomMeal = () => {
+    // Clear dom elements
+    mealsEl.innerHTML = '';
+    resultHeading.innerHTML = '';
+
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then((res) => res.json())
+        .then((data) => {
+            const meal = data.meals[0];
+
+            addMealToDOM(meal);
+        });
+};
+
 // Add meal info to DOM for user to see
 const addMealToDOM = (meal) => {
     const ingredients = [];
@@ -110,3 +125,5 @@ mealsEl.addEventListener('click', (e) => {
         getMealByID(mealID);
     }
 });
+
+random.addEventListener('click', getRandomMeal);

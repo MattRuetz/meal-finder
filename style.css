@@ -14,9 +14,15 @@ body {
 }
 
 h1 {
-    font-family: 'Lobster Two', cursive;
-    font-size: 52px;
+    font-size: 32px;
     text-shadow: 5px 5px 3px black;
+}
+
+.main-head {
+    font-family: 'Lobster Two', cursive;
+    font-size: 66px;
+    text-shadow: 5px 5px 3px black;
+    text-decoration: underline dashed #e09850;
 }
 
 .container {
@@ -41,6 +47,7 @@ button {
     font-size: 14px;
     padding: 8px 10px;
     margin: 0;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 input[type='text'] {
@@ -70,7 +77,17 @@ input[type='text'] {
         #dd1818,
         #333333
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: background-color 0.2s ease-in-out;
     color: #fff;
+}
+
+.random-btn:hover {
+    background: #dd1818;
+}
+
+.random-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 .meals {
@@ -113,12 +130,73 @@ input[type='text'] {
     opacity: 1;
 }
 
+.single-meal {
+    margin: 30px auto;
+    width: 70%;
+}
+
+.single-meal img {
+    width: 300px;
+    margin: 15px;
+    border: 4px solid white;
+    border-radius: 100%;
+}
+
+.single-meal p {
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.single-meal ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.single-meal ul li {
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    background-color: #fff;
+    display: inline-block;
+    color: #39200c;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 2px;
+}
+
+.single-meal-info {
+    margin: 20px;
+    padding: 10px;
+    border: 2px #e09850 dashed;
+    border-radius: 10px;
+    background-color: #291709;
+}
+
 @media (max-width: 800px) {
+    .meals {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 @media (max-width: 700px) {
+    .meals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal {
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (max-width: 500px) {
     input[type='text'] {
         width: 100%;
+    }
+    .meals {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .meal {
+        width: 300px;
+        height: 300px;
     }
 }
